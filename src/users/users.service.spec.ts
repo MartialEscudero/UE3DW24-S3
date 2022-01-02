@@ -35,5 +35,12 @@ describe('UsersService', () => {
       expect(service.findAll);
     });
   });
+
+  describe('UsersService.findOne', () => {
+    it('should return a user', async () => {
+      service.findOne = jest.fn();
+      expect(service.findOne(1));
+    });
+  });
   
 });

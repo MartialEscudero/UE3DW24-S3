@@ -40,5 +40,12 @@ describe('UsersController', () => {
       expect(controller.findAll()).toBe(data);
     });
   });
-  
+
+  describe('Find One User', () => {
+    it('should return a user', async () => {
+      usersService.findOne = jest.fn();
+      const data = controller.findOne("1");
+      expect(controller.findOne("1")).toBe(data);
+    });
+  });
 });
