@@ -27,6 +27,7 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
+    updateUserDto.id = id;
     return this.usersRepository.save(updateUserDto);
   }
 
