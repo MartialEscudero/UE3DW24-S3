@@ -36,10 +36,17 @@ describe('UsersService', () => {
     });
   });
 
-  describe('UsersService.findOne', () => {
-    it('should return a user', async () => {
-      service.findOne = jest.fn();
-      expect(service.findOne(1));
+  describe('UsersService.create', () => {
+    it('should create a user', async () => {
+      service.create = jest.fn();
+      const test = {
+        id : 99,
+        firstname : "Miles",
+        lastname : "Morales",
+        createdAt: new Date,
+        updatedAt: new Date,
+      }
+      expect(service.create(test));
     });
   });
   

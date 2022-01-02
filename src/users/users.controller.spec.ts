@@ -48,4 +48,20 @@ describe('UsersController', () => {
       expect(controller.findOne("1")).toBe(data);
     });
   });
+
+  describe('Create One User', () => {
+    it('should create a user', async () => {
+      usersService.create = jest.fn();
+      const test = {
+        id : 99,
+        firstname : "Miles",
+        lastname : "Morales",
+        createdAt: new Date,
+        updatedAt: new Date,
+      }
+      const data = controller.create(test);
+      expect(controller.create(test)).toBe(data);
+    });
+  });
+  
 });
