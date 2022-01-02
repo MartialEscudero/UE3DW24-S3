@@ -4,6 +4,7 @@ import { UsersService } from './users.service';
 
 import { Users, UsersRepository } from './entities/user.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 describe('UsersController', () => {
   let controller: UsersController;
@@ -64,4 +65,20 @@ describe('UsersController', () => {
     });
   });
   
+  describe('UserController update', () => {
+    it('should update an user', async () => {
+        usersService.update = jest.fn();
+        var userToUpdate = new UpdateUserDto();
+        const data = controller.update("1", userToUpdate);
+        expect(controller.update("1", userToUpdate)).toBe(data);
+    });
+});
+
+describe('UserController delete', () => {
+    it('should delete an user', async () => {
+        usersService.remove = jest.fn();
+        const data = controller.remove("1");
+        expect(controller.remove("1")).toBe(data);
+    });
+});
 });

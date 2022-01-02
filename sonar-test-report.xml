@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="/home/vagrant/nestjs/src/users/users.controller.spec.ts">
-        <testCase name="UsersController should be defined" duration="14"/>
-        <testCase name="UsersController Find all Users should return an array of users" duration="6"/>
-        <testCase name="UsersController Find One User should return a user" duration="6"/>
-        <testCase name="UsersController Create One User should create a user" duration="3"/>
+    <file path="/home/vagrant/semaine3/UE3DW24-S3/src/users/users.controller.spec.ts">
+        <testCase name="UsersController should be defined" duration="90"/>
+        <testCase name="UsersController Find all Users should return an array of users" duration="13"/>
+        <testCase name="UsersController Find One User should return a user" duration="13"/>
+        <testCase name="UsersController Create One User should create a user" duration="11"/>
+        <testCase name="UsersController UserController update should update an user" duration="16"/>
+        <testCase name="UsersController UserController delete should delete an user" duration="9"/>
     </file>
-    <file path="/home/vagrant/nestjs/src/users/users.service.spec.ts">
-        <testCase name="UsersService should be defined" duration="4"/>
-        <testCase name="UsersService UsersService.findAll should return an array of users" duration="5"/>
-        <testCase name="UsersService UsersService.create should create a user" duration="4"/>
+    <file path="/home/vagrant/semaine3/UE3DW24-S3/src/users/users.service.spec.ts">
+        <testCase name="UsersService should be defined" duration="17"/>
+        <testCase name="UsersService UsersService.findAll should return an array of users" duration="15"/>
+        <testCase name="UsersService UsersService.findOne should return a user" duration="13"/>
+        <testCase name="UsersService UsersService.create should create a user" duration="12"/>
+        <testCase name="UsersService UserService.update  should update an user" duration="15"/>
+        <testCase name="UsersService UserService.remove  should delete an user" duration="12"/>
     </file>
-    <file path="/home/vagrant/nestjs/src/app.controller.spec.ts">
-        <testCase name="AppController root should return &quot;Hello World!&quot;" duration="6"/>
+    <file path="/home/vagrant/semaine3/UE3DW24-S3/src/app.controller.spec.ts">
+        <testCase name="AppController root should return &quot;Hello World!&quot;" duration="10"/>
     </file>
 </testExecutions>

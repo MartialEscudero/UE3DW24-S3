@@ -3,9 +3,11 @@ import { UsersService } from './users.service';
 
 import { Users, UsersRepository } from './entities/user.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 describe('UsersService', () => {
   let service: UsersService;
+  let usersRepository: UsersRepository;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,7 +23,8 @@ describe('UsersService', () => {
         UsersRepository,
       ],
     }).compile();
-
+    
+    usersRepository = module.get<UsersRepository>(UsersRepository);
     service = module.get<UsersService>(UsersService);
   });
 
@@ -56,5 +59,21 @@ describe('UsersService', () => {
       expect(service.create(test));
     });
   });
-  
+
+  describe('UserService.update ', () => {
+    it('should update an user', async () => {
+        UsersRepository.update = jest.fn();
+        var userToUpdate = new UpdateUserDto;
+        const data = service.update(1, userToUpdate);
+        expect(service.update(1, userToUpdate)).toBe(data);
+    });
+  });
+
+  describe('UserService.remove ', () => {
+    it('should delete an user', async () => {
+        UsersRepository.delete = jest.fn();
+        service.remove = jest.fn();
+        expect(service.remove(1));
+    });
+  });
 });

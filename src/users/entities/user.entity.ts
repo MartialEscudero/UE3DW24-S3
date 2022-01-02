@@ -20,4 +20,7 @@ export class Users {
 }
 
 @EntityRepository(Users)
-export class UsersRepository extends Repository<Users> {}
+export class UsersRepository extends Repository<Users> {
+    static update: jest.Mock<any, any>;
+    static delete: jest.Mock<any, any>;
+}
